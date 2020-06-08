@@ -111,6 +111,10 @@ a {
   font-size: 18px;
 }
 
+#screen pre {
+  font-family: monospace;
+}
+
 #now-playing {
   text-align: center;
 }
