@@ -24,7 +24,7 @@ $longVideos = $conn->query("SELECT NAME, DURATION, THUMBNAIL FROM VIDEOS WHERE D
       <div class="section-title">
         <h2>Short Videos</h2>
         <div class="info tooltip">&#9432;
-          <span class="tooltip-text">Videos, shorter than 10 seconds. They take less time to load.</span>
+          <span class="tooltip-text">Videos, nearly 10 seconds long. They take less time to load.</span>
         </div>
       </div>
 
@@ -47,7 +47,7 @@ $longVideos = $conn->query("SELECT NAME, DURATION, THUMBNAIL FROM VIDEOS WHERE D
       <div class="section-title">
         <h2>Long Videos</h2>
         <div class="info tooltip">&#9432;
-          <span class="tooltip-text">Videos, longer than 10 seconds. They take more time to load.</span>
+          <span class="tooltip-text">Videos, nearly 1 minute long. They take more time to load.</span>
         </div>
       </div>
       <section class="video-container">
