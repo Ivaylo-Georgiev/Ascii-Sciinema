@@ -24,6 +24,7 @@ function extractAsciiFrames(videoName, displayProperties) {
   let request = new XMLHttpRequest();
   request.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
+      document.querySelector('#now-playing').innerHTML = 'Now Playing: ' + videoName.replace('_', ' ');
       let frames = JSON.parse(this.response);
       playVideo(frames, displayProperties);
     }
@@ -48,7 +49,8 @@ function displayFrame(frame, isLast, displayProperties) {
   document.querySelector("#screen").innerHTML = frame;
 
   if(isLast) {
-    document.querySelector("#screen").innerHTML = '<h2>Thanks for watching!</h2><a href="../php/index.php">Browse more videos</a>';
+    document.querySelector("#screen").innerHTML = '<h2>Thanks for watching!</h2><img class="heart" src="../resources/heart.png" alt="Heart"/><a href="../php/index.php">Browse more videos</a>';
+    document.querySelector("#now-playing").remove();
   }
 }
 
