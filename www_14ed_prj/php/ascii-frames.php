@@ -20,7 +20,7 @@ function extractFrames($videoName) {
   shell_exec('ffmpeg -i ../tmp/' . $videoName . '.mp4 ../tmp/frames/thumb%04d.png');
 }
 
-function fetchAsciiFrames($videoName, $scale) {#
+function fetchAsciiFrames($videoName, $scale) {
   downloadVideo($videoName);
   extractFrames($videoName);
 
