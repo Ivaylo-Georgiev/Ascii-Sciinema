@@ -1,18 +1,19 @@
 <?php
 
-class ImageToAscii
-{
+class ImageToAscii {
 
-	protected $image;
-	protected $height;
-	protected $width;
+	// There are 16777216 RGB colors and 128 ASCII characters, most of which are special.
+	// Therefore the system is designed to represent 32 color groups as ASCII characters.
+	private const COLOR_GROUP_SEPARATOR = 524288; // 16777216 / 32
+	private const BACKSLASH_OFFSET = 28;
+	private const INITIAL_ASCII_VALUE = 64;
 
+	private $image;
+	private $height;
+	private $width;
 
-	public function __construct($options)
-	{
-
+	public function __construct($options) {
 		$this->image = imagecreatefromstring(file_get_contents($options['image']));
-
 		$dimensions = getimagesize($options['image']);
 
 		$this->width = $dimensions[0];
@@ -29,23 +30,19 @@ class ImageToAscii
 		}
 	}
 
-	public function convertImage()
-	{
-		$output = '';
+	public function convertImage() {
 		$output = '<pre>';
 
 		for ($y = 0; $y < $this->height; $y++) {
 			for ($x = 0; $x <= $this->width; $x++) {
-
-                $rgb = @imagecolorat($this->image, $x, $y);
-
-                if ($x == $this->width) {
-                    $output .= '<br/>';
-                } else {
-                    $output .= $this->getCharacter($rgb);
-                }
-            }
+        $rgb = @imagecolorat($this->image, $x, $y);
+				if ($x == $this->width) {
+          $output .= '<br/>';
+        } else {
+          $output .= $this->getCharacter($rgb);
         }
+      }
+    }
 
 		$output .= '</pre>';
 
@@ -53,10 +50,15 @@ class ImageToAscii
 	}
 
 	public function getCharacter($rgb) {
-		$offset = intdiv($rgb, 524288);
-		if($offset == 28) {
+		$offset = intdiv($rgb, self::COLOR_GROUP_SEPARATOR);
+
+		// backslash is being escaped by json_encode, which causes the screen to have inconsistent size
+		if($offset == self::BACKSLASH_OFFSET) {
 			$offset = $offset + 1;
 		}
-		return chr(64 + $offset);
+
+		return chr(self::INITIAL_ASCII_VALUE + $offset);
 	}
 }
+
+?>
