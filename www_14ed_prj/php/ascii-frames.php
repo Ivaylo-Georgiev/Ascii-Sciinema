@@ -1,6 +1,6 @@
 <?php
 
-require_once 'ImageToAscii.php';
+require_once 'image-to-ascii.php';
 include './db-connection.php';
 
 function downloadVideo($videoName) {
