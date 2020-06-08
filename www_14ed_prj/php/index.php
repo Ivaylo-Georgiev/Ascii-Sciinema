@@ -1,5 +1,5 @@
 <?php
-include "./db-connection.php";
+require_once "../php/db-connection.php";
 
 $conn = openConnection();
 $shortVideos = $conn->query("SELECT NAME, DURATION, THUMBNAIL FROM VIDEOS WHERE DURATION='SHORT'")->fetchAll();
