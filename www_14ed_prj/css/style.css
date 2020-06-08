@@ -107,8 +107,12 @@ a {
   min-height: 80vh;
 }
 
-#screen h2 {
+#screen h2, #now-playing {
   font-size: 18px;
+}
+
+#now-playing {
+  text-align: center;
 }
 
 .info {
@@ -156,4 +160,9 @@ a {
   margin-left: -100px;
   opacity: 0;
   transition: opacity 0.3s;
+}
+
+.heart {
+  width: 80px;
+  height: 80px;
 }
