@@ -36,6 +36,8 @@ function fetchAsciiFrames($videoName, $scale) {#
 		unlink($filePath);
 	}
   unlink('../tmp/'.$videoName.'.mp4');
+  rmdir('../tmp/frames');
+  rmdir('../tmp');
 
 	return json_encode($asciiFrames, JSON_UNESCAPED_SLASHES );
 }
