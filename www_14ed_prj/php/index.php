@@ -2,8 +2,6 @@
 require_once "../php/db-connection.php";
 
 $conn = openConnection();
-$shortVideos = $conn->query("SELECT NAME, DURATION, THUMBNAIL FROM VIDEOS WHERE DURATION='SHORT'")->fetchAll();
-$longVideos = $conn->query("SELECT NAME, DURATION, THUMBNAIL FROM VIDEOS WHERE DURATION='LONG'")->fetchAll();
 ?>
 
 <!DOCTYPE html>
@@ -30,17 +28,27 @@ $longVideos = $conn->query("SELECT NAME, DURATION, THUMBNAIL FROM VIDEOS WHERE D
 
       <section class="video-container">
         <?php
+if ($conn != null) {
+    $shortVideos = $conn->query("SELECT NAME, DURATION, THUMBNAIL FROM VIDEOS WHERE DURATION='SHORT'");
+    if ($shortVideos) {
+        $shortVideos = $shortVideos->fetchAll();
         foreach ($shortVideos as $shortVideo) {
-          $name = $shortVideo['NAME'];
-          $thumbnail = $shortVideo['THUMBNAIL'];
+            $name      = $shortVideo['NAME'];
+            $thumbnail = $shortVideo['THUMBNAIL'];
 
-          echo '<div class="video '.str_replace(' ', '_', $name).'">';
-          echo '<img class="video-thumbnail" src="data:image/png;base64,'.base64_encode($thumbnail).'" title="Play video" alt="'.$name.'"/>';
-          echo '<h3 class="video-name">'.$name.'</h3>';
-          echo '</div>';
+            echo '<div class="video ' . str_replace(' ', '_', $name) . '">';
+            echo '<img class="video-thumbnail" src="data:image/png;base64,' . base64_encode($thumbnail) . '" title="Play video" alt="' . $name . '"/>';
+            echo '<h3 class="video-name">' . $name . '</h3>';
+            echo '</div>';
         }
-         ?>
-      </section>
+    } else {
+        echo '<p class="empty-section">There are no videos available in this section</p>';
+    }
+} else {
+    echo '<p class="empty-section">Could not connect to the data base </p>';
+}
+?>
+    </section>
     </section>
 
     <section class="long-videos">
@@ -52,17 +60,27 @@ $longVideos = $conn->query("SELECT NAME, DURATION, THUMBNAIL FROM VIDEOS WHERE D
       </div>
       <section class="video-container">
         <?php
+if ($conn != null) {
+    $longVideos = $conn->query("SELECT NAME, DURATION, THUMBNAIL FROM VIDEOS WHERE DURATION='LONG'");
+    if ($longVideos) {
+        $longVideos = $longVideos->fetchAll();
         foreach ($longVideos as $longVideo) {
-          $name = $longVideo['NAME'];
-          $thumbnail = $longVideo['THUMBNAIL'];
+            $name      = $longVideo['NAME'];
+            $thumbnail = $longVideo['THUMBNAIL'];
 
-          echo '<div class="video '.str_replace(' ', '_', $name).'">';
-          echo '<img class="video-thumbnail" src="data:image/png;base64,'.base64_encode($thumbnail).'" title="Play video" alt="'.$name.'"/>';
-          echo '<h3 class="video-name">'.$name.'</h3>';
-          echo '</div>';
+            echo '<div class="video ' . str_replace(' ', '_', $name) . '">';
+            echo '<img class="video-thumbnail" src="data:image/png;base64,' . base64_encode($thumbnail) . '" title="Play video" alt="' . $name . '"/>';
+            echo '<h3 class="video-name">' . $name . '</h3>';
+            echo '</div>';
         }
-         ?>
-      </section>
+    } else {
+        echo '<p class="empty-section">There are no videos available in this section</p>';
+    }
+} else {
+    echo '<p class="empty-section">Could not connect to the data base </p>';
+}
+?>
+    </section>
     </section>
   </main>
 

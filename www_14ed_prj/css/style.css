@@ -170,3 +170,14 @@ a {
   width: 80px;
   height: 80px;
 }
+
+.empty-section {
+  width: 100%;
+  text-align: center;
+}
+
+.error {
+  background-color: red;
+  width: 100%;
+  text-align: center;
+}
