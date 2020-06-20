@@ -29,7 +29,7 @@ function extractAsciiFrames(videoName, displayProperties) {
       playVideo(frames, displayProperties);
     }
   }
-  request.open("GET", "../php/ascii-frames.php?videoName=" + videoName + "&scale=" + displayProperties.scale, true);
+  request.open("GET", "../php/ascii-frames.php?videoName=" + videoName + "&scale=" + displayProperties.scale + "&color=" + displayProperties.color, true);
   request.send();
 
   waitForVideo();

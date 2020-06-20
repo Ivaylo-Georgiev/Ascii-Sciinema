@@ -20,7 +20,7 @@ function extractFrames($videoName) {
   shell_exec('ffmpeg -i ../tmp/' . $videoName . '.mp4 ../tmp/frames/thumb%04d.png');
 }
 
-function fetchAsciiFrames($videoName, $scale) {
+function fetchAsciiFrames($videoName, $scale, $color) {
   downloadVideo($videoName);
   extractFrames($videoName);
 
@@ -30,7 +30,8 @@ function fetchAsciiFrames($videoName, $scale) {
 		$filePath = '../tmp/frames/' . $file;
 		$ascii = new ImageToAscii(array(
 			'image' =>  $filePath,
-			'scale' => $scale
+			'scale' => $scale,
+      'color' => $color
 		));
 		array_push($asciiFrames, $ascii->convertImage());
 		unlink($filePath);
@@ -42,6 +43,6 @@ function fetchAsciiFrames($videoName, $scale) {
 	return json_encode($asciiFrames, JSON_UNESCAPED_SLASHES );
 }
 
-print_r(fetchAsciiFrames($_GET["videoName"], $_GET["scale"]));
+print_r(fetchAsciiFrames($_GET["videoName"], $_GET["scale"], $_GET["color"]));
 
 ?>

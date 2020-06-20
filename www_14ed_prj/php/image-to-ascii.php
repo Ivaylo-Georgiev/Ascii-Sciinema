@@ -11,10 +11,12 @@ class ImageToAscii {
 	private $image;
 	private $height;
 	private $width;
+	private $color;
 
 	public function __construct($options) {
 		$this->image = imagecreatefromstring(file_get_contents($options['image']));
 		$dimensions = getimagesize($options['image']);
+		$this->color = $options['color'];
 
 		$this->width = $dimensions[0];
 		$this->height = $dimensions[1];
@@ -39,7 +41,11 @@ class ImageToAscii {
 				if ($x == $this->width) {
           $output .= '<br/>';
         } else {
-          $output .= $this->getCharacter($rgb);
+					if($this->color =='true') {
+						$output .= '<span style="color:#'.dechex($rgb).'">'.$this->getCharacter($rgb).'</span>';
+					} else {
+						$output .= $this->getCharacter($rgb);
+					}
         }
       }
     }
