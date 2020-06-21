@@ -24,7 +24,7 @@ Clone this repo to your local machine using `https://github.com/Ivaylo-Georgiev/
 
 Example URL* :  http://localhost:8080/Ascii_Sciinema/www_14ed_prj/php/index.php
 
-> **Note:** localhost and 8080 may vary depending on the server configuration
+**📓 Note:** localhost and 8080 may vary depending on the server configuration
 
 ## Features
 
@@ -46,7 +46,7 @@ Colored videos can be enabled by setting the `color` property to `true` in the c
 
 <img alt="Monochrome" src="https://github.com/Ivaylo-Georgiev/Ascii_Sciinema/blob/master/monochrome.gif" width="350"><img alt="Colored" src="https://github.com/Ivaylo-Georgiev/Ascii_Sciinema/blob/master/colored.gif" width="329">
 
->⚠️ **Important:** Enable colored videos judiciously. Coloring every ASCII symbol requires significant computing and storage overhead. It is preferred to only enable it for short videos.
+⚠️ **Important:** Enable colored videos judiciously. Coloring every ASCII symbol requires significant computing and storage overhead. It is preferred to only enable it for short videos.
 
 ## Caching 
 Ascii Sciinema supports caching. Recently played ASCII videos (with certain configurations) are stored locally, so they don't have to be converted on the fly every time you watch them. Cached videos (JSON files) can be found in **www_14ed_prj/cache**
