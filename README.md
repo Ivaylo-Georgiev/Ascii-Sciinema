@@ -26,6 +26,16 @@ Example URL* :  http://localhost:8080/Ascii_Sciinema/www_14ed_prj/php/index.php
 
 ## Features
 
+### ASCII Video Conversion
+The idea behind the conversion algorithm from images to ASCII art is the following:
+ * Split the image into groups of pixels  
+ * Extract the RGB color of each pixel  
+ * Represent each color as an integer. RGB supports 256 * 256 * 256 = 16,777,216 different colors  
+ * The total number of supported colors is split into color groups, since the ASCII table contains 128 symbols and is impossible to map each color to a distinct symbol  
+ * Map every color group to a corresponding symbol from the ASCII table
+ 
+In order to transform a regular video to an ASCII video, the algorithm must be applied on each frame from the original video. After every single frame is converted, the video is rendered by displaying the ASCII images sequentially.   
+
 ### Configurability
 The configurations for the player can be found under `www_14ed_prj/js/display-properties.json`. There, the following properties can be configured:
 * `scale`
@@ -46,7 +56,7 @@ Colored videos can be enabled by setting the `color` property to `true` in the c
 
 ⚠️ **Important:** Enable colored videos judiciously. Coloring every ASCII symbol requires significant computing and storage overhead. It is preferred to only enable it for short videos.
 
-## Caching 
+### Caching 
 Ascii Sciinema supports caching. Recently played ASCII videos (with certain configurations) are stored locally, so they don't have to be converted on the fly every time you watch them. Cached videos (JSON files) can be found in **www_14ed_prj/cache**
 
 > _Made with 🔥 for the Web Development Course at FMI 2020_
