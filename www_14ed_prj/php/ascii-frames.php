@@ -20,7 +20,20 @@ function extractFrames($videoName) {
   shell_exec('ffmpeg -i ../tmp/' . $videoName . '.mp4 ../tmp/frames/thumb%04d.png');
 }
 
+function cacheAsciiFrames($fileName, $asciiFrames) {
+  if (!is_dir('../cache')) {
+    mkdir('../cache', 0777, true);
+  }
+
+  file_put_contents($fileName, $asciiFrames);
+}
+
 function fetchAsciiFrames($videoName, $scale, $color) {
+  $cacheFileName = '../cache/'.$videoName.'-'.$scale.'-'.$color.'.json';
+  if(file_exists($cacheFileName)) {
+    return file_get_contents($cacheFileName);
+  }
+
   downloadVideo($videoName);
   extractFrames($videoName);
 
@@ -40,7 +53,10 @@ function fetchAsciiFrames($videoName, $scale, $color) {
   rmdir('../tmp/frames');
   rmdir('../tmp');
 
-	return json_encode($asciiFrames, JSON_UNESCAPED_SLASHES );
+  $asciiFrames = json_encode($asciiFrames, JSON_UNESCAPED_SLASHES);
+  cacheAsciiFrames($cacheFileName, $asciiFrames);
+
+	return $asciiFrames;
 }
 
 print_r(fetchAsciiFrames($_GET["videoName"], $_GET["scale"], $_GET["color"]));
