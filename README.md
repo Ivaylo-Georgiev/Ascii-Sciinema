@@ -1,7 +1,5 @@
 # 🍿  Ascii_Sciinema
 
-> Online ASCII video player
-
 ![Home Page](https://github.com/Ivaylo-Georgiev/Ascii_Sciinema/blob/master/home.gif)
 
 ## Installation
