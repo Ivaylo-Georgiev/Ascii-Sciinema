@@ -51,4 +51,4 @@ Colored videos can be enabled by setting the `color` property to `true` in the c
 ## Caching 
 Ascii Sciinema supports caching. Recently played ASCII videos (with certain configurations) are stored locally, so they don't have to be converted on the fly every time you watch them. Cached videos (JSON files) can be found in **www_14ed_prj/cache**
 
-> _Made with 🔥 for the Web development Course at FMI 2020_
+> _Made with 🔥 for the Web Development Course at FMI 2020_
