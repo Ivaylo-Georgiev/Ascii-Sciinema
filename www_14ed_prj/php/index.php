@@ -18,6 +18,9 @@ $conn = openConnection();
   </header>
 
   <main class="video-list">
+
+    <p class="pro-tip">💡 Pro tip: Check the <a href="../html/configuration-guide.html">player configuration guide</a> to manage the performance of the player</p>
+
     <section class="short-videos">
       <div class="section-title">
         <h2>Short Videos</h2>

@@ -10,6 +10,22 @@ header, .video-list {
 
 a {
   font-size: 11px;
+  cursor: pointer;
+}
+
+.pro-tip, .pro-tip a {
+  font-size: 16px;
+  text-align: center;
+}
+
+.pro-tip a {
+  color: blue;
+  text-decoration: underline;
+}
+
+.pro-tip {
+  padding: 20px;
+  margin: auto;
 }
 
 .loading-img {
@@ -180,4 +196,28 @@ a {
   background-color: red;
   width: 100%;
   text-align: center;
+}
+
+mark {
+  background-color: white;
+}
+
+.italic {
+  font-style: italic;
+}
+
+#configuration-guide article h2 {
+  text-align: center;
+}
+
+#configuration-guide {
+  width: 60%;
+  margin: auto;
+  text-align: justify;
+}
+
+.notice {
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 20px;
 }
