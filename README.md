@@ -12,7 +12,7 @@ People have been playing around with the spacing of their text since _Ancient Gr
 The Bulgarian poet [Peyo Yavorov](https://en.wikipedia.org/wiki/Peyo_Yavorov) constructs his poem ["Две хубави очи"](https://chitanka.info/text/7085-dve-hubavi-ochi) as an ideogram of a flying bird, hence unfolding the idea of the flight as the metaphysical way to achieve cosmic harmony:
 
 >
-    Две хубави очи. Душата на дете
+            Две хубави очи. Душата на дете
             в две хубави очи; — музика — лъчи
             Не искат и не обещават те…
             Душата ми се моли,
