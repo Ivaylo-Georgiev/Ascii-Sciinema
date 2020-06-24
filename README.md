@@ -2,6 +2,42 @@
 
 ![Home Page](https://github.com/Ivaylo-Georgiev/Ascii_Sciinema/blob/master/home.gif)
 
+## ASCII Art Overview 
+
+There have been some recent discussions assessing the history of ASCII art — along with some thoughts about its future.  
+
+ASCII art is basically images created only through text characters, specifically the 128 characters specified in the American Standard Code for Information Interchange, a character encoding standard for electronic communication.  
+
+People have been playing around with the spacing of their text since _Ancient Greece_, a phenomenon which is sometimes called “concrete poetry” (or “shape poetry”).  
+The Bulgarian poet [Peyo Yavorov](https://en.wikipedia.org/wiki/Peyo_Yavorov) constructs his poem ["Две хубави очи"](https://chitanka.info/text/7085-dve-hubavi-ochi) as an ideogram of a flying bird, hence unfolding the idea of the flight as the metaphysical way to achieve cosmic harmony:
+
+>
+    Две хубави очи. Душата на дете
+            в две хубави очи; — музика — лъчи
+            Не искат и не обещават те…
+            Душата ми се моли,
+            дете,
+            душата ми се моли!
+    Страсти и неволи
+            ще хвърлят утре върху тях
+    булото на срам и грях.
+    Булото на срам и грях —
+            не ще го хвърлят върху тях
+    страсти и неволи.
+            Душата ми се моли,
+            дете,
+            душата ми се моли…
+            Не искат и не обещават те! —
+            Две хубави очи. Музика, лъчи
+            в две хубави очи. Душата на дете…
+
+ASCII art can be found in various other places nowadays. Slack has implemented a /shrug command which will add some appropriate ASCII art to the end of your message.
+<pre>¯\_(ツ)_/¯</pre>
+
+Furthermore there's still ASCII art archives on Pinterest and a forum on Reddit. One of the many proofs that ASCII art still has future is [the ASCII text rendition of the entire movie “Star Wars”](http://www.asciimation.co.nz/) — which has apparently been an 18-year-project.  
+
+Find more about the surprisingly rich history of ASCII art [here](https://thenewstack.io/surprisingly-rich-history-ascii-art/).
+
 ## Installation
 
 ### Clone
@@ -18,6 +54,7 @@ Clone this repo to your local machine using `https://github.com/Ivaylo-Georgiev/
  7. Execute SQL script from `db-init.sql`
  8. Navigate to **xampp/mysql/bin/my.ini** and change `max_allowed_packet` under `[mysqld]` to 536870912
  9. Open `www_14ed_prj/php/fill-db.php` in a browser to insert resources into the database
+ 
  10. Navigate to the home page
 
 Example URL* :  http://localhost:8080/Ascii_Sciinema/www_14ed_prj/php/index.php
