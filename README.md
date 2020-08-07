@@ -41,7 +41,7 @@ Find more about the surprisingly rich history of ASCII art [here](https://thenew
 ## Installation
 
 ### Clone
-Clone this repo to your local machine using `https://github.com/Ivaylo-Georgiev/Ascii_Sciinema.git`  
+Clone this repo to your local machine using `https://github.com/Ivaylo-Georgiev/Ascii-Sciinema.git`  
 
 ### Setup
 
